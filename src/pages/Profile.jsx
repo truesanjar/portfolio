@@ -59,11 +59,9 @@ const ProfilePage = () => {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
-              // data-testid="profile-email-link"
-              // className="contact-email inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = `mailto:${EMAIL}?subject=Hello👋`;
+                link.href = `mailto:${EMAIL}`;
                 link.click();
               }}
             >
@@ -94,16 +92,12 @@ const ProfilePage = () => {
               {p.labels.email}
             </div>
             <div className="value">
-              <button
+              <a
+                href={`mailto:${EMAIL}`}
                 className="contact-email text-accent hover:underline"
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = `mailto:${EMAIL}?subject=Hello👋`;
-                  link.click();
-                }}
               >
-                Send Email
-              </button>
+                {EMAIL}
+              </a>
             </div>
           </div>
         </div>
