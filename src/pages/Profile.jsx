@@ -57,18 +57,6 @@ const ProfilePage = () => {
             {p.bio}
           </p>
 
-          {/* Бахши 7: Тамос */}
-          <div className="privacy-section">
-            <div className="section-icon">📧</div>
-            <div className="section-content">
-              <div className="contact-info">
-                <a href="mailto:llcsanjar@gmail.com" className="contact-email">
-                  llcsanjar@gmail.com
-                </a>
-              </div>
-            </div>
-          </div>
-
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
               href={`mailto:${EMAIL}`}
