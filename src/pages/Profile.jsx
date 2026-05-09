@@ -41,6 +41,9 @@ const ProfilePage = () => {
 
   return (
     <div className="page-shell fade-up" data-testid="profile-page">
+      <a href="mailto:test@gmail.com">
+        TEST
+      </a>
       <div className="grid md:grid-cols-[280px_1fr] gap-6 md:gap-10 mb-12 items-start">
         <div className="avatar-frame max-w-[280px] mx-auto md:mx-0" data-testid="profile-avatar">
           <img src={PHOTO_URL} alt="Sanjar Asadzoda" loading="eager" />
@@ -58,15 +61,14 @@ const ProfilePage = () => {
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = `mailto:${EMAIL}`;
-                link.click();
-              }}
+            <a
+              href={`mailto:${EMAIL}`}
+              data-testid="profile-email-link"
+              className="contact-email inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
             >
-              Send Email
-            </button>
+              <Mail className="w-4 h-4" />
+              {EMAIL}
+            </a>
           </div>
         </div>
       </div>
