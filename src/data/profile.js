@@ -1,6 +1,5 @@
 // Static profile data — same across languages where appropriate
-export const PHOTO_URL =
-  "https://customer-assets.emergentagent.com/job_sanjar-portfolio/artifacts/uhly8gge_truesanjar.png";
+export const PHOTO_URL = "https://www.anyvoice.world/truesanjar.png";
 
 export const EMAIL = "llcsanjar@gmail.com";
 
