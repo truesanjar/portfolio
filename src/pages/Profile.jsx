@@ -41,9 +41,6 @@ const ProfilePage = () => {
 
   return (
     <div className="page-shell fade-up" data-testid="profile-page">
-      <a href="mailto:test@gmail.com">
-        TEST
-      </a>
       <div className="grid md:grid-cols-[280px_1fr] gap-6 md:gap-10 mb-12 items-start">
         <div className="avatar-frame max-w-[280px] mx-auto md:mx-0" data-testid="profile-avatar">
           <img src={PHOTO_URL} alt="Sanjar Asadzoda" loading="eager" />
@@ -59,6 +56,8 @@ const ProfilePage = () => {
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">
             {p.bio}
           </p>
+
+          console.log(JSON.stringify(EMAIL));
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
