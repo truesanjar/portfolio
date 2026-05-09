@@ -59,15 +59,13 @@ const ProfilePage = () => {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
-              type="button"
-              data-testid="profile-email-link"
               onClick={() => {
-                window.location.href = `mailto:${EMAIL}`;
+                const link = document.createElement("a");
+                link.href = `mailto:${EMAIL}`;
+                link.click();
               }}
-              className="contact-email inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
             >
-              <Mail className="w-4 h-4" />
-              {EMAIL}
+              Send Email
             </button>
           </div>
         </div>
