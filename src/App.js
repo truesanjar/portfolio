@@ -12,9 +12,6 @@ import SettingsPage from "@/pages/Settings";
 function App() {
   return (
     <AppProvider>
-      <a href="mailto:llcsanjar@gmail.com">
-        TEST
-      </a>
       <div className="App grain min-h-screen bg-background text-foreground">
         <BrowserRouter>
           <Navigation />
