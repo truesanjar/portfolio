@@ -40,7 +40,7 @@ const ProfilePage = () => {
   ];
 
   return (
-    <div className="page-shell fade-up" data-testid="profile-page">
+    <div>
       <a href="mailto:llcsanjar@gmail.com">
         TEST
       </a>
