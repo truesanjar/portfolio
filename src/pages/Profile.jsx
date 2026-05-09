@@ -59,7 +59,7 @@ const ProfilePage = () => {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
-              data-testid="profile-email-link"
+              // data-testid="profile-email-link"
               className="contact-email inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
               onClick={() => {
                 const link = document.createElement("a");
