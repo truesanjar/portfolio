@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Light theme — warm cream + deep ink + amber accent */
+        --background: 36 33% 97%;
+        --foreground: 220 40% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 40% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 40% 11%;
+        --primary: 220 50% 14%;
+        --primary-foreground: 36 33% 97%;
+        --secondary: 36 25% 92%;
+        --secondary-foreground: 220 40% 11%;
+        --muted: 36 20% 93%;
+        --muted-foreground: 220 12% 40%;
+        --accent: 28 95% 50%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 75% 50%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 36 15% 86%;
+        --input: 36 15% 86%;
+        --ring: 28 95% 50%;
+        --radius: 0.875rem;
+    }
+
+    .dark {
+        /* Dark theme — deep navy + warm white + amber */
+        --background: 222 47% 7%;
+        --foreground: 36 30% 96%;
+        --card: 222 40% 10%;
+        --card-foreground: 36 30% 96%;
+        --popover: 222 40% 10%;
+        --popover-foreground: 36 30% 96%;
+        --primary: 36 30% 96%;
+        --primary-foreground: 222 47% 7%;
+        --secondary: 222 30% 14%;
+        --secondary-foreground: 36 30% 96%;
+        --muted: 222 25% 16%;
+        --muted-foreground: 220 10% 65%;
+        --accent: 33 100% 60%;
+        --accent-foreground: 222 47% 7%;
+        --destructive: 0 62% 45%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 222 25% 18%;
+        --input: 222 25% 18%;
+        --ring: 33 100% 60%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html, body, #root {
+        height: 100%;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "ss01", "cv11";
+    }
+    h1, h2, h3, h4, h5 {
+        font-family: 'Manrope', 'Inter', sans-serif;
+        letter-spacing: -0.02em;
+    }
+    code, pre, .mono {
+        font-family: 'JetBrains Mono', monospace;
+    }
+}
+
+/* Subtle grain texture for warmth */
+.grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    z-index: 1;
+    mix-blend-mode: multiply;
+}
+
+.dark .grain::before {
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+}
+
+/* Utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease-out both; }
+
+@keyframes fillBar {
+    from { width: 0; }
+}
+.fill-bar { animation: fillBar 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes pulseAccent {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.4); }
+    50% { box-shadow: 0 0 0 8px hsl(var(--accent) / 0); }
+}
+.pulse-accent { animation: pulseAccent 2.5s infinite; }
+
+/* Selection */
+::selection {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+}
