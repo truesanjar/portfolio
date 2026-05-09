@@ -57,9 +57,26 @@ const ProfilePage = () => {
             {p.bio}
           </p>
 
+          {/* Бахши 7: Тамос */}
+          <div className="privacy-section">
+            <div className="section-icon">📧</div>
+            <div className="section-content">
+              <div className="contact-info">
+                <a href="mailto:llcsanjar@gmail.com" className="contact-email">
+                  llcsanjar@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <a href="mailto:llcsanjar@gmail.com?subject=Hello👋" className="contact-email inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all">
-              llcsanjar@gmail.com
+            <a
+              href={`mailto:${EMAIL}`}
+              data-testid="profile-email-link"
+              className="contact-email inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
+            >
+              <Mail className="w-4 h-4" />
+              {EMAIL}
             </a>
           </div>
         </div>
@@ -85,10 +102,12 @@ const ProfilePage = () => {
               <Mail className="w-3.5 h-3.5 text-accent" strokeWidth={2.2} />
               {p.labels.email}
             </div>
-
             <div className="value">
-              <a href="mailto:llcsanjar@gmail.com?subject=Hello👋" className="contact-email text-accent hover:underline">
-                llcsanjar@gmail.com
+              <a
+                href={`mailto:${EMAIL}`}
+                className="contact-email text-accent hover:underline"
+              >
+                {EMAIL}
               </a>
             </div>
           </div>
