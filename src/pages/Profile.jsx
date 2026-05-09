@@ -57,16 +57,9 @@ const ProfilePage = () => {
             {p.bio}
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <a
-              href={`mailto:${EMAIL}`}
-              data-testid="profile-email-link"
-              className="contact-email inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-all"
-            >
-              <Mail className="w-4 h-4" />
-              {EMAIL}
-            </a>
-          </div>
+          <a href="mailto:llcsanjar@gmail.com">
+            TEST
+          </a>
         </div>
       </div>
 
