@@ -39,8 +39,6 @@ const ProfilePage = () => {
     { icon: Sparkles, key: "philosophy" },
   ];
 
-  console.log(JSON.stringify(EMAIL));
-
   return (
     <div className="page-shell fade-up" data-testid="profile-page">
       <div className="grid md:grid-cols-[280px_1fr] gap-6 md:gap-10 mb-12 items-start">
