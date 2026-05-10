@@ -1,7 +1,7 @@
 // Static profile data — same across languages where appropriate
 export const PHOTO_URL = "/truesanjar.png";
 
-export const EMAIL = "llcsanjar@gmail.com";
+export const EMAIL = "truesanjar@gmail.com";
 
 // Social links with their lucide icon names
 export const SOCIAL_LINKS = [
