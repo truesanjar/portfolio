@@ -19,7 +19,7 @@ export const SOCIAL_LINKS = [
     handle: "truesanjar",
     url: "https://github.com/truesanjar",
     icon: "Github",
-    color: "#171717",
+    color: "hsl(var(--github))",
   },
   {
     id: "linkedin",
