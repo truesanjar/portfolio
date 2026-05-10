@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { MessageCircle, Loader2 } from "lucide-react";
 import { useApp } from "../contexts/AppContext";
 import { PHOTO_URL } from "../data/profile";
@@ -58,10 +58,7 @@ const formatTime = (iso, lang, t) => {
 // ---------------------- Tweet ----------------------
 const Tweet = ({ tweet, lang, t }) => {
   return (
-    <article
-      className="tweet-card"
-      data-testid={`tweet-${tweet.id}`}
-    >
+    <article className="tweet-card" data-testid={`tweet-${tweet.id}`}>
       <div className="flex gap-3">
         <img
           src={PHOTO_URL}
@@ -71,9 +68,7 @@ const Tweet = ({ tweet, lang, t }) => {
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="font-bold text-sm">
-              Санҷар
-            </span>
+            <span className="font-bold text-sm">Санҷар</span>
 
             <span className="text-muted-foreground text-sm mono">
               @truesanjar
@@ -86,7 +81,6 @@ const Tweet = ({ tweet, lang, t }) => {
             </span>
           </div>
 
-          {/* сана */}
           <div className="text-xs text-muted-foreground mt-1">
             {new Date(tweet.created_at).toLocaleDateString(
               lang === "tj"
@@ -133,13 +127,20 @@ const TweetsPage = () => {
 
   const sentinelRef = useRef(null);
 
+  // ✅ SORT: навҳо боло
+  const sortedTweets = useMemo(() => {
+    return [...tweetsData].sort(
+      (a, b) => new Date(b.created_at) - new Date(a.created_at)
+    );
+  }, []);
+
   const loadPage = useCallback(() => {
     if (loading || done) return;
 
     setLoading(true);
 
     setTimeout(() => {
-      const slice = tweetsData.slice(skip, skip + PAGE_SIZE);
+      const slice = sortedTweets.slice(skip, skip + PAGE_SIZE);
 
       if (slice.length === 0) {
         setDone(true);
@@ -149,9 +150,7 @@ const TweetsPage = () => {
 
       setTweets((prev) => {
         const seen = new Set(prev.map((t) => t.id));
-
         const uniq = slice.filter((t) => !seen.has(t.id));
-
         return [...prev, ...uniq];
       });
 
@@ -163,7 +162,7 @@ const TweetsPage = () => {
 
       setLoading(false);
     }, 200);
-  }, [skip, loading, done]);
+  }, [skip, loading, done, sortedTweets]);
 
   useEffect(() => {
     loadPage();
@@ -173,7 +172,6 @@ const TweetsPage = () => {
     if (done) return;
 
     const el = sentinelRef.current;
-
     if (!el) return;
 
     const obs = new IntersectionObserver(
@@ -182,32 +180,20 @@ const TweetsPage = () => {
           loadPage();
         }
       },
-      {
-        rootMargin: "300px",
-      }
+      { rootMargin: "300px" }
     );
 
     obs.observe(el);
-
     return () => obs.disconnect();
   }, [loadPage, done]);
 
   return (
-    <div
-      className="page-shell fade-up"
-      data-testid="tweets-page"
-    >
-      <span className="section-eyebrow">
-        {tw.eyebrow}
-      </span>
+    <div className="page-shell fade-up" data-testid="tweets-page">
+      <span className="section-eyebrow">{tw.eyebrow}</span>
 
       <h1 className="section-title flex items-center gap-3">
         {tw.title}
-
-        <MessageCircle
-          className="w-7 h-7 text-accent"
-          strokeWidth={2.2}
-        />
+        <MessageCircle className="w-7 h-7 text-accent" strokeWidth={2.2} />
       </h1>
 
       <p className="text-muted-foreground text-base md:text-lg max-w-xl mb-8">
@@ -222,12 +208,7 @@ const TweetsPage = () => {
         )}
 
         {tweets.map((tweet) => (
-          <Tweet
-            key={tweet.id}
-            tweet={tweet}
-            lang={lang}
-            t={t}
-          />
+          <Tweet key={tweet.id} tweet={tweet} lang={lang} t={t} />
         ))}
       </div>
 
