@@ -119,33 +119,32 @@ const SettingsPage = () => {
             const Icon = ICONS[social.icon] || Globe;
 
             return (
-              <a
+              <div
                 key={social.id}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 data-testid={`social-link-${social.id}`}
-                className="card-soft group flex items-center gap-3 px-4 py-3.5 hover:translate-y-[-2px]"
+                className="card-soft group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-3 px-4 py-3.5 hover:translate-y-[-2px] transition-transform"
               >
-                <span
-                  className="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 overflow-hidden transition-colors"
-                  style={{ backgroundColor: `${social.color}18`, color: social.color }}
-                >
-                  {isAnyVoice ? (
-                    <img
-                      src="/anyvoice.png"
-                      alt="AnyVoice"
-                      className="w-10 h-10 object-contain"
-                    />
-                  ) : (
-                    <Icon className="w-5 h-5"/>
-                  )}
-                </span>
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                  <span
+                    className="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 overflow-hidden transition-colors"
+                    style={{ backgroundColor: `${social.color}18`, color: social.color }}
+                  >
+                    {isAnyVoice ? (
+                      <img
+                        src="/anyvoice.png"
+                        alt="AnyVoice"
+                        className="w-10 h-10 object-contain"
+                      />
+                    ) : (
+                      <Icon className="w-5 h-5"/>
+                    )}
+                  </span>
 
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold">{social.name}</div>
-                  <div className="text-xs text-muted-foreground truncate mono">
-                    {social.handle}
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-semibold truncate">{social.name}</div>
+                    <div className="text-xs text-muted-foreground truncate mono">
+                      {social.handle}
+                    </div>
                   </div>
                 </div>
 
@@ -154,12 +153,12 @@ const SettingsPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid={`subscribe-${social.id}`}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-accent text-accent-foreground text-xs font-bold hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-full bg-accent text-accent-foreground text-xs font-bold hover:opacity-90 transition-opacity whitespace-nowrap w-full sm:w-auto"
                 >
                   {s.subscribe}
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-3 h-3 flex-shrink-0" />
                 </a>
-              </a>
+              </div>
             );
           })}
         </div>
