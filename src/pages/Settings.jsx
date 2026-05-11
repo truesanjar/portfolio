@@ -1,10 +1,26 @@
 import React from "react";
-import { Sun, Moon, Languages, Info, Heart, ExternalLink, Github, Linkedin, Facebook, Megaphone, Globe } from "lucide-react";
 import { useApp } from "../contexts/AppContext";
 import { LANGUAGES } from "../i18n";
 import { SOCIAL_LINKS } from "../data/profile";
+import {
+  Sun,
+  Moon,
+  Languages,
+  Info,
+  ExternalLink,
+  Heart,
+  Globe,
+  Github,
+  Linkedin,
+  Facebook,
+  Send,
+  AtSign,
+  Instagram,
+  Youtube,
+  Rocket,
+} from "lucide-react";
 
-const ICONS = { Github, Linkedin, Facebook, Megaphone };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket };
 
 const SettingsPage = () => {
   const { t, lang, setLang, theme, setTheme } = useApp();
@@ -99,24 +115,40 @@ const SettingsPage = () => {
         <p className="text-muted-foreground mb-5">{s.supportText}</p>
         <div className="space-y-2.5">
           {SOCIAL_LINKS.map((social) => {
+            const isAnyVoice = social.id === "anyvoice";
             const Icon = ICONS[social.icon] || Globe;
+
             return (
-              <div
+              <a
                 key={social.id}
-                className="flex items-center gap-3 p-3 rounded-xl bg-secondary/50 border border-border"
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid={`social-link-${social.id}`}
+                className="card-soft group flex items-center gap-3 px-4 py-3.5 hover:translate-y-[-2px]"
               >
                 <span
-                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: `${social.color}20`, color: social.color }}
+                  className="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 overflow-hidden transition-colors"
+                  style={{ backgroundColor: `${social.color}18`, color: social.color }}
                 >
-                  <Icon className="w-4 h-4" />
+                  {isAnyVoice ? (
+                    <img
+                      src="/anyvoice.png"
+                      alt="AnyVoice"
+                      className="w-10 h-10 object-contain"
+                    />
+                  ) : (
+                    <Icon className="w-5 h-5"/>
+                  )}
                 </span>
+
                 <div className="flex-1 min-w-0">
                   <div className="text-sm font-semibold">{social.name}</div>
                   <div className="text-xs text-muted-foreground truncate mono">
                     {social.handle}
                   </div>
                 </div>
+
                 <a
                   href={social.url}
                   target="_blank"
@@ -127,7 +159,7 @@ const SettingsPage = () => {
                   {s.subscribe}
                   <ExternalLink className="w-3 h-3" />
                 </a>
-              </div>
+              </a>
             );
           })}
         </div>

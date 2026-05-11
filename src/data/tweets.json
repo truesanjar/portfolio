@@ -1,14 +1,82 @@
 [
   {
     "id": "tw-001",
-    "text": "JavaScript аввалин забон буд ки фаҳмидам — Python дувумин буд ки дӯст доштам. Ҳар забон як олами фикр аст.",
+    "text": {
+      "tj": "JavaScript аввалин забон буд ки фаҳмидам — Python дувумин буд ки дӯст доштам. Ҳар забон як олами фикр аст.",
+      "ru": "JavaScript был первым языком, который я понял — Python вторым, который полюбил. Каждый язык — это целый мир мышления.",
+      "en": "JavaScript was the first language I understood — Python the second one I loved. Each language is a world of thought."
+    },
     "image": "c.png",
     "created_at": "2025-10-10T12:15:00Z"
   },
   {
     "id": "tw-002",
-    "text": "Имрӯз як хусусияти нави AnyVoice-ро тамом кардам — корбарон акнун метавонанд паёмҳояшонро бе нишон додани шахсияти худ нашр кунанд. Озодии баён аввал аст. 🚀",
+    "text": {
+      "tj": "Имрӯз як хусусияти нави AnyVoice-ро тамом кардам — корбарон акнун метавонанд паёмҳояшонро бе нишон додани шахсияти худ нашр кунанд. Озодии баён аввал аст. 🚀",
+      "ru": "Сегодня завершил новую функцию AnyVoice — пользователи теперь могут публиковать сообщения, не раскрывая свою личность. Свобода слова прежде всего. 🚀",
+      "en": "Today I completed a new AnyVoice feature — users can now publish their messages without revealing their identity. Freedom of speech first. 🚀"
+    },
     "image": null,
     "created_at": "2025-12-08T10:30:00Z"
+  },
+  {
+    "id": "tw-003",
+    "text": {
+      "tj": "Код навиштан мисли шеър гуфтан аст — ҳар сатр бояд маъно дошта бошад. Имрӯз як алгоритми навро оптимизатсия кардам ва худро мисли рассом ҳис кардам.",
+      "ru": "Писать код — как писать стихи: каждая строка должна иметь смысл. Сегодня оптимизировал новый алгоритм и почувствовал себя художником.",
+      "en": "Writing code is like writing poetry — every line must have meaning. Today I optimized a new algorithm and felt like an artist."
+    },
+    "image": null,
+    "created_at": "2025-11-20T08:45:00Z"
+  },
+  {
+    "id": "tw-004",
+    "text": {
+      "tj": "React, Vue, Angular... Фреймворкҳо меоянд ва мераванд, аммо JavaScript абадӣ аст. Дарс гирифтам: асосҳоро ёд гир, на синтаксисро.",
+      "ru": "React, Vue, Angular... Фреймворки приходят и уходят, но JavaScript вечен. Усвоил урок: учи основы, а не синтаксис.",
+      "en": "React, Vue, Angular... Frameworks come and go, but JavaScript is eternal. Lesson learned: learn fundamentals, not syntax."
+    },
+    "image": null,
+    "created_at": "2025-09-15T14:20:00Z"
+  },
+  {
+    "id": "tw-005",
+    "text": {
+      "tj": "4 соат баг ҷустам. Танҳо як нукта вергул мушкил буд. Рӯзи муқаррарии барноманавис 😅",
+      "ru": "4 часа искал баг. Проблема была всего в одной точке с запятой. Обычный день программиста 😅",
+      "en": "Spent 4 hours hunting a bug. It was just one semicolon. Typical programmer's day 😅"
+    },
+    "image": "code-bug.png",
+    "created_at": "2025-08-05T18:00:00Z"
+  },
+  {
+    "id": "tw-006",
+    "text": {
+      "tj": "Имрӯз дарс додам ба донишҷӯён. Вақте ки чашмонашон фурӯзон мешавад ва мавзӯро мефаҳманд — ин беҳтарин эҳсос аст. Омӯзгорӣ як санъати алоҳида аст.",
+      "ru": "Сегодня преподавал студентам. Когда их глаза загораются и они понимают тему — это лучшее чувство. Преподавание — отдельное искусство.",
+      "en": "Taught students today. When their eyes light up and they understand the topic — that's the best feeling. Teaching is a separate art."
+    },
+    "image": null,
+    "created_at": "2025-07-22T11:30:00Z"
+  },
+  {
+    "id": "tw-007",
+    "text": {
+      "tj": "Open Source қудрати бузург дорад. Лоиҳаи ман дар GitHub 500 ситора гирифт! Ташаккур ба ҳамаи шумо 🌟 Ин танҳо ибтидо аст.",
+      "ru": "Open Source имеет огромную силу. Мой проект на GitHub получил 500 звёзд! Спасибо всем вам 🌟 Это только начало.",
+      "en": "Open Source has tremendous power. My GitHub project reached 500 stars! Thank you all 🌟 This is just the beginning."
+    },
+    "image": null,
+    "created_at": "2025-06-10T09:00:00Z"
+  },
+  {
+    "id": "tw-008",
+    "text": {
+      "tj": "Барноманавис будан на танҳо код навиштан аст. Ин тарзи фикр кардан, ҳалли мушкилот ва эҷодкорист. Ҳар рӯз як саргузашти нав.",
+      "ru": "Быть программистом — это не только писать код. Это образ мышления, решение проблем и творчество. Каждый день — новое приключение.",
+      "en": "Being a programmer isn't just about writing code. It's a way of thinking, problem-solving, and creativity. Every day is a new adventure."
+    },
+    "image": null,
+    "created_at": "2025-05-01T16:45:00Z"
   }
 ]

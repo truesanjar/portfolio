@@ -44,9 +44,23 @@ const ProjectsPage = () => {
         data-testid="project-modal"
       >
         <div
-          className="relative bg-card border border-border w-full h-full md:w-auto md:h-auto md:max-w-6xl md:rounded-2xl overflow-hidden"
+          className="
+            relative
+            bg-card
+            border
+            border-border
+            w-full
+            h-full
+            md:rounded-2xl
+            overflow-hidden
+            flex
+            flex-col
+          "
           style={{
-            maxWidth: "100%",
+            maxWidth: "1300px",
+            maxHeight: "90vh",
+            width: "100%",
+            height: "100%",
           }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -59,90 +73,101 @@ const ProjectsPage = () => {
             <X className="w-5 h-5" />
           </button>
 
-          {/* Layout Responsive: flex-column дар mobile, flex-row дар desktop */}
-          <div className="flex flex-col md:flex-row h-full md:h-auto">
-            
-            {/* Тағйир - самти чап (расм) */}
-            <div className="w-full md:w-1/2 bg-black flex-shrink-0">
-              <div className="h-64 md:h-full w-full">
+          {/* Контейнери ягонаи скролшаванда */}
+          <div className="flex-1 overflow-y-auto">
+            {/* Тасвир дар боло барои mobile */}
+            <div className="w-full bg-black flex items-center justify-center p-4 md:hidden">
+              <div className="aspect-square w-full max-w-[500px] max-h-[500px]">
                 <img
                   src={project.cover}
                   alt={project.title[lang]}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </div>
             </div>
 
-            {/* Тағйир - самти рост (матн) */}
-            <div className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8">
-              <div className="flex items-center gap-3 mb-3">
-                <span
-                  className="text-xs mono font-semibold px-2.5 py-1 rounded-full"
-                  style={{
-                    backgroundColor: `${project.accent}20`,
-                    color: project.accent,
-                  }}
-                >
-                  <Calendar className="w-3 h-3 inline mr-1" />
-                  {project.year}
-                </span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-1">
-                {project.title[lang]}
-              </h2>
-              <p className="text-accent mono text-sm mb-6">
-                {project.tagline[lang]}
-              </p>
-
-              <div className="space-y-5">
-                <div>
-                  <div className="text-xs mono uppercase tracking-wider text-muted-foreground mb-1.5">
-                    {p.why}
-                  </div>
-                  <p className="text-foreground leading-relaxed">{project.why[lang]}</p>
-                </div>
-                <div>
-                  <div className="text-xs mono uppercase tracking-wider text-muted-foreground mb-1.5">
-                    {p.what}
-                  </div>
-                  <p className="text-foreground leading-relaxed">{project.what[lang]}</p>
-                </div>
-                <div>
-                  <div className="text-xs mono uppercase tracking-wider text-muted-foreground mb-1.5">
-                    {p.built}
-                  </div>
-                  <p className="text-foreground leading-relaxed">{project.built[lang]}</p>
-                </div>
-                <div>
-                  <div className="text-xs mono uppercase tracking-wider text-muted-foreground mb-1.5 flex items-center gap-1.5">
-                    <Layers className="w-3 h-3" />
-                    {p.stack}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.stack.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs mono px-2.5 py-1 rounded-md bg-secondary"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
+            {/* Layout барои desktop: flex-row */}
+            <div className="flex flex-col md:flex-row items-stretch">
+              {/* Самти чап (расм) барои desktop */}
+              <div className="hidden md:flex w-full md:w-1/2 bg-black items-center justify-center flex-shrink-0 p-4">
+                <div className="aspect-square w-full min-w-[280px] min-h-[280px] max-w-[700px] max-h-[700px]">
+                  <img
+                    src={project.cover}
+                    alt={project.title[lang]}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
               </div>
 
-              {project.url && project.url !== "#" && (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid={`project-modal-visit-${project.id}`}
-                  className="mt-7 inline-flex items-center gap-2 px-5 py-3 bg-foreground text-background rounded-full font-medium hover:bg-accent hover:text-accent-foreground transition-all"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  {p.visit}
-                </a>
-              )}
+              {/* Самти рост (матн) */}
+              <div className="w-full md:w-1/2 p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-3">
+                  <span
+                    className="text-xs mono font-semibold px-2.5 py-1 rounded-full"
+                    style={{
+                      backgroundColor: `${project.accent}20`,
+                      color: project.accent,
+                    }}
+                  >
+                    <Calendar className="w-3 h-3 inline mr-1" />
+                    {project.year}
+                  </span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-1">
+                  {project.title[lang]}
+                </h2>
+                <p className="text-accent mono text-sm mb-6">
+                  {project.tagline[lang]}
+                </p>
+
+                <div className="space-y-5">
+                  <div>
+                    <div className="text-xs mono uppercase tracking-wider text-muted-foreground mb-1.5">
+                      {p.why}
+                    </div>
+                    <p className="text-foreground leading-relaxed">
+                      {project.why[lang]}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="text-xs mono uppercase tracking-wider text-muted-foreground mb-1.5">
+                      {p.what}
+                    </div>
+                    <p className="text-foreground leading-relaxed">
+                      {project.what[lang]}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="text-xs mono uppercase tracking-wider text-muted-foreground mb-1.5 flex items-center gap-1.5">
+                      <Layers className="w-3 h-3" />
+                      {p.stack}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.stack.map((s) => (
+                        <span
+                          key={s}
+                          className="text-xs mono px-2.5 py-1 rounded-md bg-secondary"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {project.url && project.url !== "#" && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`project-modal-visit-${project.id}`}
+                    className="mt-7 inline-flex items-center gap-2 px-5 py-3 bg-foreground text-background rounded-full font-medium hover:bg-accent hover:text-accent-foreground transition-all"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    {p.visit}
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -167,7 +192,7 @@ const ProjectsPage = () => {
             data-testid={`project-card-${proj.id}`}
             className="card-soft project-card text-left flex flex-col"
           >
-            <div className="aspect-[16/9] overflow-hidden rounded-t-[var(--radius)] bg-secondary">
+            <div className="aspect-square overflow-hidden rounded-t-[var(--radius)] bg-secondary">
               <img
                 src={proj.cover}
                 alt={proj.title[lang]}

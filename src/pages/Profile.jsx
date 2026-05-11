@@ -4,7 +4,11 @@ import {
   Github,
   Linkedin,
   Facebook,
-  Megaphone,
+  Send,
+  AtSign,
+  Instagram,
+  Youtube,
+  Rocket,
   Mail,
   MapPin,
   Calendar,
@@ -19,7 +23,7 @@ import {
 import { useApp } from "../contexts/AppContext";
 import { PHOTO_URL, EMAIL, SOCIAL_LINKS } from "../data/profile";
 
-const ICONS = { Github, Linkedin, Facebook, Megaphone };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket };
 
 const ProfilePage = () => {
   const { t } = useApp();
@@ -54,7 +58,12 @@ const ProfilePage = () => {
             {p.role}
           </p>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">
-            {p.bio}
+            {p.bio.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
+            ))}
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -109,7 +118,9 @@ const ProfilePage = () => {
         </h2>
         <div className="grid sm:grid-cols-2 gap-3" data-testid="profile-socials">
           {SOCIAL_LINKS.map((s) => {
+            const isAnyVoice = s.id === "anyvoice";
             const Icon = ICONS[s.icon] || Globe;
+
             return (
               <a
                 key={s.id}
@@ -120,17 +131,27 @@ const ProfilePage = () => {
                 className="card-soft group flex items-center gap-3 px-4 py-3.5 hover:translate-y-[-2px]"
               >
                 <span
-                  className="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 transition-colors"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 overflow-hidden transition-colors"
                   style={{ backgroundColor: `${s.color}18`, color: s.color }}
                 >
-                  <Icon className="w-5 h-5" strokeWidth={2} />
+                  {isAnyVoice ? (
+                    <img
+                      src="/anyvoice.png"
+                      alt="AnyVoice"
+                      className="w-10 h-10 object-contain"
+                    />
+                  ) : (
+                    <Icon className="w-5 h-5"/>
+                  )}
                 </span>
+
                 <div className="flex-1 min-w-0">
                   <div className="font-semibold text-sm">{s.name}</div>
                   <div className="text-xs text-muted-foreground truncate">
                     {s.handle}
                   </div>
                 </div>
+
                 <span className="text-xs text-muted-foreground group-hover:text-accent transition-colors">
                   →
                 </span>

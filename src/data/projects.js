@@ -2,46 +2,41 @@
 export const PROJECTS = [
   {
     id: "anyvoice",
-    year: "2025",
-    stack: ["React", "FastAPI", "MongoDB", "WebSocket"],
+    year: "2026",
+    stack: ["Python", "JavaScript", "React", "Vite", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket"],
     url: "https://www.anyvoice.world",
     accent: "#F59E0B",
     cover:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80&auto=format&fit=crop",
+      "anyvoice.png",
     title: {
       tj: "AnyVoice",
       ru: "AnyVoice",
       en: "AnyVoice",
     },
     tagline: {
-      tj: "Шабакаи иҷтимоии озодии баён",
-      ru: "Социальная сеть свободы слова",
-      en: "Social network for free expression",
+      tj: "Шабакаи иҷтимои барои озодии баён",
+      ru: "Социальная сеть для свободы слова",
+      en: "Social network for freedom of speech",
     },
     why: {
-      tj: "Хостам ҷое созам ки ҳар кас бе хавфи фошсозӣ нигаронии худро баён карда тавонад.",
-      ru: "Хотел создать место, где каждый может высказаться без страха быть раскрытым.",
-      en: "I wanted a place where anyone could speak up without fear of exposure.",
+      tj: "Хостам ҷое созам ки ҳар кас бе хавфи фошшавӣ нигаронии худро баён карда тавонад.",
+      ru: "Я хотел создать место, где каждый сможет выражать свои переживания без страха быть раскрытым.",
+      en: "I wanted to create a place where everyone can express their concerns without fear of being exposed.",
     },
     what: {
-      tj: "Платформаи иҷтимоист ки сабти ном бе маълумоти шахсӣ имконпазир аст. Ҳама паёмҳо номаълум, аммо хӯшаҳо барои гуфтугӯҳои ҷамъиятӣ.",
-      ru: "Социальная платформа с регистрацией без личных данных. Анонимные сообщения и тематические треды для публичных дискуссий.",
-      en: "A social platform with no-personal-data signup. Anonymous posts and threads for public discussions.",
-    },
-    built: {
-      tj: "React + FastAPI + MongoDB. WebSocket барои live чат, JWT-auth, инфраструктураи production.",
-      ru: "React + FastAPI + MongoDB. WebSocket для live-чата, JWT-auth, продакшн инфраструктура.",
-      en: "React + FastAPI + MongoDB. WebSocket for live chat, JWT auth, production infra.",
+      tj: "Платформаи иҷтимоист ки сабти ном бе маълумоти шахсӣ имконпазир аст. Шумо онҷо расмҳо видеоҳо ва мақолаҳои худро бе пайгири ё тарс дар озодии комил метавонед нашр кунед.",
+      ru: "Это социальная платформа, где регистрация возможна без личных данных. Там вы можете публиковать свои фотографии, видео и статьи в полной свободе — без слежки и страха.",
+      en: "It is a social platform where registration is possible without personal information. There, you can publish your photos, videos, and articles in complete freedom — without surveillance or fear.",
     },
   },
   {
     id: "capsulix",
-    year: "2025",
-    stack: ["Python", "aiogram", "MongoDB", "APScheduler"],
+    year: "2026",
+    stack: ["Python", "aiogram"],
     url: "https://t.me/Capsulixbot",
     accent: "#22D3EE",
     cover:
-      "https://images.unsplash.com/photo-1531956531700-dc0ee0f1f9a5?w=900&q=80&auto=format&fit=crop",
+      "capsulix.jpg",
     title: {
       tj: "Capsulix Bot",
       ru: "Capsulix Bot",
@@ -58,54 +53,15 @@ export const PROJECTS = [
       en: "Everyone should be able to talk to their future self.",
     },
     what: {
-      tj: "Бот барои Telegram, ки паёмҳои ту ба худи ояндаатро дар санаи мушаххас фиристод.",
-      ru: "Telegram-бот, который отправляет твоё сообщение тебе же в указанную дату.",
-      en: "Telegram bot that delivers your messages to your future self on a chosen date.",
-    },
-    built: {
-      tj: "aiogram 3, APScheduler барои таъхири даќиќ, MongoDB барои нигоҳдории капсулаҳо.",
-      ru: "aiogram 3, APScheduler для точной отложенной отправки, MongoDB для хранения капсул.",
-      en: "aiogram 3, APScheduler for precise delayed delivery, MongoDB for capsule storage.",
-    },
-  },
-  {
-    id: "weather-ai",
-    year: "2025",
-    stack: ["Python", "aiogram", "OpenWeather API", "GPT"],
-    url: "#",
-    accent: "#10B981",
-    cover:
-      "https://images.unsplash.com/photo-1561553543-e4c7b608b98d?w=900&q=80&auto=format&fit=crop",
-    title: {
-      tj: "Боти обуҳаво бо AI",
-      ru: "Бот погоды с AI",
-      en: "Weather AI Bot",
-    },
-    tagline: {
-      tj: "Обуҳаво бо тафсири AI",
-      ru: "Погода с AI-комментарием",
-      en: "Weather with AI commentary",
-    },
-    why: {
-      tj: "Маълумоти оддии обуҳаво кофӣ нест — одамон тавсия ва тафсир мехоҳанд.",
-      ru: "Сухие цифры о погоде не работают — людям нужен совет и интерпретация.",
-      en: "Plain weather data isn't enough — people want advice and interpretation.",
-    },
-    what: {
-      tj: "Telegram бот ки обуҳаворо барои ҳар шаҳр медиҳад ва бо AI шарҳ медиҳад: чӣ пӯшидан, гирифтани соябон ё не.",
-      ru: "Telegram-бот: показывает погоду для любого города и AI-объяснение: что надеть, нужен ли зонт.",
-      en: "Telegram bot: weather for any city plus AI commentary on what to wear, whether to bring an umbrella.",
-    },
-    built: {
-      tj: "aiogram + OpenWeather API + GPT-4o-mini барои тавсияҳои табиӣ ба забонҳои гуногун.",
-      ru: "aiogram + OpenWeather API + GPT-4o-mini для естественных рекомендаций на разных языках.",
-      en: "aiogram + OpenWeather API + GPT-4o-mini for natural recommendations in several languages.",
+      tj: "Бот дар Telegram, ки паёмҳои шуморо ба худи ояндаатон дар санаи мушаххас мефиристад.",
+      ru: "Бот в Telegram, который отправляет ваши сообщения вам в будущее в указанную дату.",
+      en: "A Telegram bot that sends your messages to your future self on a specified date.",
     },
   },
   {
     id: "portfolio",
-    year: "2025",
-    stack: ["React", "FastAPI", "Tailwind", "MongoDB"],
+    year: "2026",
+    stack: ["JavaScript", "React", "HTML", "CSS", "Tailwind", "i18n"],
     url: "#",
     accent: "#A855F7",
     cover:
@@ -122,18 +78,13 @@ export const PROJECTS = [
     },
     why: {
       tj: "Лозим буд як ҷои ягона дошта бошам барои нишон додани кор, малакаҳо ва андешаҳои худам.",
-      ru: "Нужно было одно место, где можно показать работы, навыки и мысли.",
-      en: "I needed a single place to show my work, skills and thoughts.",
+      ru: "Мне нужно было единое место, где я мог бы показывать свои работы, навыки и мысли.",
+      en: "I needed a single place to showcase my work, skills, and thoughts.",
     },
     what: {
-      tj: "Портфолио бо твитҳо, лоиҳаҳо, малакаҳо. Бо 3 забон, 2 тема, mobile-first.",
-      ru: "Портфолио с твитами, проектами, навыками. 3 языка, 2 темы, mobile-first.",
-      en: "Portfolio with tweets, projects, skills. 3 languages, 2 themes, mobile-first.",
-    },
-    built: {
-      tj: "React 19 + FastAPI + MongoDB. Lazy loading, view tracking, theme & language switcher.",
-      ru: "React 19 + FastAPI + MongoDB. Lazy loading, счётчик просмотров, переключение темы и языка.",
-      en: "React 19 + FastAPI + MongoDB. Lazy loading, view tracking, theme & language switching.",
+      tj: "Портфолио бо твитҳо, лоиҳаҳо, малакаҳо шуморо комилан бо ман шинос мекунад. 3 забон ва 2 темаро дастгири мекунад. Ҳамчунин барои mobile ҳам муносиб аст.",
+      ru: "Портфолио с твитами, проектами и навыками, которое полностью знакомит вас со мной. Поддерживает 3 языка и 2 темы. Также адаптировано для мобильных устройств.",
+      en: "A portfolio with tweets, projects, and skills that fully introduces you to me. It supports 3 languages and 2 themes. It is also fully responsive for mobile devices.",
     },
   },
 ];

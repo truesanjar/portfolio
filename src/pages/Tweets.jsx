@@ -6,6 +6,21 @@ import tweetsData from "../data/tweets.json";
 
 const PAGE_SIZE = 10;
 
+// ---------------------- функсия барои гирифтани матн вобаста ба забон ----------------------
+const getLocalizedText = (textData, lang) => {
+  // Агар матн объект бошад (формати нави чандзабона)
+  if (typeof textData === 'object' && textData !== null && !Array.isArray(textData)) {
+    return textData[lang] || textData['tj'] || textData[Object.keys(textData)[0]] || '';
+  }
+  // Агар матн массиви объектҳои забонӣ бошад (формати алтернативӣ)
+  if (Array.isArray(textData)) {
+    const found = textData.find(item => item.lang === lang);
+    return found ? found.content : (textData[0]?.content || '');
+  }
+  // Агар матн string бошад (формати кӯҳна барои мутобиқати қафо)
+  return textData || '';
+};
+
 // ---------------------- вақт ----------------------
 const formatTime = (iso, lang, t) => {
   try {
@@ -57,6 +72,9 @@ const formatTime = (iso, lang, t) => {
 
 // ---------------------- Tweet ----------------------
 const Tweet = ({ tweet, lang, t }) => {
+  // Гирифтани матни локализатсияшуда
+  const localizedText = getLocalizedText(tweet.text, lang);
+  
   return (
     <article className="tweet-card" data-testid={`tweet-${tweet.id}`}>
       <div className="flex gap-3">
@@ -97,7 +115,7 @@ const Tweet = ({ tweet, lang, t }) => {
           </div>
 
           <p className="text-[15px] leading-[1.5] mt-3 whitespace-pre-wrap break-words">
-            {tweet.text}
+            {localizedText}
           </p>
 
           {tweet.image && (
@@ -106,6 +124,7 @@ const Tweet = ({ tweet, lang, t }) => {
                 src={`/tweets_images/${tweet.image}`}
                 alt=""
                 className="w-full"
+                loading="lazy"
               />
             </div>
           )}
