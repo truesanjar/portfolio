@@ -9,6 +9,7 @@ import {
   Instagram,
   Youtube,
   Rocket,
+  BriefcaseBusiness,
   Mail,
   MapPin,
   Calendar,
@@ -23,7 +24,7 @@ import {
 import { useApp } from "../contexts/AppContext";
 import { PHOTO_URL, EMAIL, SOCIAL_LINKS } from "../data/profile";
 
-const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness };
 
 const ProfilePage = () => {
   const { t } = useApp();

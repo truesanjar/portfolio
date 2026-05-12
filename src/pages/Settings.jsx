@@ -18,9 +18,10 @@ import {
   Instagram,
   Youtube,
   Rocket,
+  BriefcaseBusiness,
 } from "lucide-react";
 
-const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness };
 
 const SettingsPage = () => {
   const { t, lang, setLang, theme, setTheme } = useApp();

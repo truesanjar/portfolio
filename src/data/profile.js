@@ -92,5 +92,13 @@ export const SOCIAL_LINKS = [
     url: "https://www.producthunt.com/@truesanjar",
     icon: "Rocket",
     color: "#DA552F",
+  },
+  {
+    id: "upwork",
+    name: "Upwork",
+    handle: "Sanjar A.",
+    url: "https://www.upwork.com/freelancers/~01286cb98ee2e3f62b",
+    icon: "BriefcaseBusiness",
+    color: "#1F2937",
   }
 ];
