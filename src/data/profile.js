@@ -99,6 +99,6 @@ export const SOCIAL_LINKS = [
     handle: "Sanjar A.",
     url: "https://www.upwork.com/freelancers/~01286cb98ee2e3f62b",
     icon: "BriefcaseBusiness",
-    color: "#1F2937",
+    color: "hsl(var(--upwork))",
   }
 ];
