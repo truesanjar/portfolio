@@ -100,5 +100,15 @@ export const SOCIAL_LINKS = [
     url: "https://www.upwork.com/freelancers/~01286cb98ee2e3f62b",
     icon: "BriefcaseBusiness",
     color: "hsl(var(--upwork))",
-  }
+  },
+  {
+    id: "upwork",
+    name: "Upwork",
+    handle: "Sanjar A.",
+    url: "https://www.upwork.com/freelancers/~01286cb98ee2e3f62b",
+    icon: "BriefcaseBusiness",
+    color: "hsl(var(--upwork))",
+  },
+
+  // codementor.io/@sanjar518584
 ];
