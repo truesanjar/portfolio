@@ -102,12 +102,20 @@ export const SOCIAL_LINKS = [
     color: "hsl(var(--upwork))",
   },
   {
-    id: "upwork",
-    name: "Upwork",
-    handle: "Sanjar A.",
-    url: "https://www.upwork.com/freelancers/~01286cb98ee2e3f62b",
-    icon: "BriefcaseBusiness",
-    color: "hsl(var(--upwork))",
+    id: "codementor",
+    name: "Codementor",
+    handle: "truesanjar",
+    url: "https://www.codementor.io/@truesanjar",
+    icon: "MessageSquareCode",
+    color: "#0EA5E9",
+  },
+  {
+    id: "arc",
+    name: "Arc",
+    handle: "truesanjar",
+    url: "https://arc.dev/@truesanjar",
+    icon: "Orbit",
+    color: "#7C3AED",
   },
 
   // codementor.io/@sanjar518584

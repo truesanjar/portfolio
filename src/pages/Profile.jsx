@@ -10,6 +10,7 @@ import {
   Youtube,
   Rocket,
   BriefcaseBusiness,
+  MessageSquareCode,
   Mail,
   MapPin,
   Calendar,
@@ -20,11 +21,12 @@ import {
   Sparkles,
   Briefcase,
   Flag,
+  Orbit,
 } from "lucide-react";
 import { useApp } from "../contexts/AppContext";
 import { PHOTO_URL, EMAIL, SOCIAL_LINKS } from "../data/profile";
 
-const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness, MessageSquareCode, Orbit };
 
 const ProfilePage = () => {
   const { t } = useApp();

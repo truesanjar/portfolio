@@ -19,9 +19,11 @@ import {
   Youtube,
   Rocket,
   BriefcaseBusiness,
+  MessageSquareCode,
+  Orbit,
 } from "lucide-react";
 
-const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness, MessageSquareCode, Orbit };
 
 const SettingsPage = () => {
   const { t, lang, setLang, theme, setTheme } = useApp();
