@@ -117,6 +117,4 @@ export const SOCIAL_LINKS = [
     icon: "Orbit",
     color: "#7C3AED",
   },
-
-  // codementor.io/@sanjar518584
 ];
