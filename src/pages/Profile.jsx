@@ -38,7 +38,7 @@ const ProfilePage = () => {
     { icon: Sparkles, key: "age" },
     { icon: MapPin, key: "location" },
     { icon: Heart, key: "marital" },
-    { icon: BookOpen, key: "religion" },
+    // { icon: BookOpen, key: "religion" },
     { icon: Briefcase, key: "profession" },
     { icon: Flag, key: "nationality" },
     { icon: Globe, key: "languages" },
