@@ -3,7 +3,7 @@ export const PROJECTS = [
   {
     id: "anyvoice",
     year: "2026",
-    stack: ["Python", "JavaScript", "React", "Vite", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket"],
+    stack: ["Python", "JavaScript", "React", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket", "Docker"],
     url: "https://www.anyvoice.world",
     accent: "#F59E0B",
     cover:
@@ -85,6 +85,35 @@ export const PROJECTS = [
       tj: "Портфолио бо твитҳо, лоиҳаҳо, малакаҳо шуморо комилан бо ман шинос мекунад. 3 забон ва 2 темаро дастгири мекунад. Ҳамчунин барои mobile ҳам муносиб аст.",
       ru: "Портфолио с твитами, проектами и навыками, которое полностью знакомит вас со мной. Поддерживает 3 языка и 2 темы. Также адаптировано для мобильных устройств.",
       en: "A portfolio with tweets, projects, and skills that fully introduces you to me. It supports 3 languages and 2 themes. It is also fully responsive for mobile devices.",
+    },
+  },
+  {
+    id: "messenger0",
+    year: "2026",
+    stack: ["Python", "JavaScript", "React", "FastAPI", "MongoDB", "Websocket", "HTML", "CSS", "Tailwind", "i18n", "Docker"],
+    url: "#",
+    accent: "#8400ff",
+    cover:
+      "messenger0.png",
+    title: {
+      tj: "Messenger0",
+      ru: "Messenger0",
+      en: "Messenger0",
+    },
+    tagline: {
+      tj: "Паёмрасони амн барои сӯҳбати роҳат",
+      ru: "Безопасный мессенджер для удобного общения",
+      en: "Safe messenger for comfortable communication",
+    },
+    why: {
+      tj: "Ҳама бояд тавонанд дар амнияти комил бо ҳамдигар алоқа дошта бошанд.",
+      ru: "Каждый должен иметь возможность общаться друг с другом в полной безопасности.",
+      en: "Everyone should have the ability to communicate with each other in full safety.",
+    },
+    what: {
+      tj: "Паёмрасон бо системаи рамзгузории E2EE. Сабти ном хеле сода аст фақат бо аккаунти google. Баъди сабти ном шумо ҳар каси дигаре ки дар ин паёмрасон ҳастро ҷустуҷӯ карда бо вай як сӯҳабти комилан амн дошта метавонед.",
+      ru: "Мессенджер с системой сквозного шифрования E2EE. Регистрация очень простая, только с аккаунтом Google. После регистрации вы можете найти любого другого человека, который есть в этом мессенджере, и вести с ним полностью безопасное общение.",
+      en: "Messenger with an E2EE encryption system. Registration is very simple, only with a Google account. After registration, you can search for any other person who is on this messenger and have a completely secure conversation with them.",
     },
   },
 ];
