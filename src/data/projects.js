@@ -91,7 +91,7 @@ export const PROJECTS = [
     id: "messenger0",
     year: "2026",
     stack: ["Python", "JavaScript", "React", "FastAPI", "MongoDB", "Websocket", "HTML", "CSS", "Tailwind", "i18n", "Docker"],
-    url: "#",
+    url: "https://www.messenger0.world",
     accent: "#8400ff",
     cover:
       "messenger0.png",
