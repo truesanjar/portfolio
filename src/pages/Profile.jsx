@@ -22,11 +22,13 @@ import {
   Briefcase,
   Flag,
   Orbit,
+  MessageSquare,
+  MessageCircle
 } from "lucide-react";
 import { useApp } from "../contexts/AppContext";
 import { PHOTO_URL, EMAIL, SOCIAL_LINKS } from "../data/profile";
 
-const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness, MessageSquareCode, Orbit };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness, MessageSquareCode, Orbit, MessageSquare, MessageCircle };
 
 const ProfilePage = () => {
   const { t } = useApp();
@@ -122,6 +124,7 @@ const ProfilePage = () => {
         <div className="grid sm:grid-cols-2 gap-3" data-testid="profile-socials">
           {SOCIAL_LINKS.map((s) => {
             const isAnyVoice = s.id === "anyvoice";
+            const isMessenger0 = s.id === "messenger0";
             const Icon = ICONS[s.icon] || Globe;
 
             return (
@@ -141,6 +144,12 @@ const ProfilePage = () => {
                     <img
                       src="/anyvoice.png"
                       alt="AnyVoice"
+                      className="w-10 h-10 object-contain"
+                    />
+                  ) : isMessenger0 ? (
+                    <img
+                      src="/messenger0.png"
+                      alt="Messenger0"
                       className="w-10 h-10 object-contain"
                     />
                   ) : (

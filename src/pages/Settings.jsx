@@ -21,9 +21,11 @@ import {
   BriefcaseBusiness,
   MessageSquareCode,
   Orbit,
+  MessageSquare,
+  MessageCircle
 } from "lucide-react";
 
-const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness, MessageSquareCode, Orbit };
+const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness, MessageSquareCode, Orbit, MessageSquare, MessageCircle };
 
 const SettingsPage = () => {
   const { t, lang, setLang, theme, setTheme } = useApp();
@@ -119,6 +121,7 @@ const SettingsPage = () => {
         <div className="space-y-2.5">
           {SOCIAL_LINKS.map((social) => {
             const isAnyVoice = social.id === "anyvoice";
+            const isMessenger0 = social.id === "messenger0";
             const Icon = ICONS[social.icon] || Globe;
 
             return (
@@ -136,6 +139,12 @@ const SettingsPage = () => {
                       <img
                         src="/anyvoice.png"
                         alt="AnyVoice"
+                        className="w-10 h-10 object-contain"
+                      />
+                    ) : isMessenger0 ? (
+                      <img
+                        src="/messenger0.png"
+                        alt="Messenger0"
                         className="w-10 h-10 object-contain"
                       />
                     ) : (
