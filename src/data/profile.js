@@ -112,7 +112,7 @@ export const SOCIAL_LINKS = [
   {
     id: "Signal",
     name: "Signal",
-    handle: "sanjar",
+    handle: "sanjar.26",
     url: "https://signal.me/#eu/pMdvF4xmRcsM8hSjDON1sSo_XICNIv5XfR0bBspgtF2VujTcWURKx7BTTWzo--ku",
     icon: "MessageCircle",
     color: "#08517e",
