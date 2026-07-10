@@ -94,14 +94,6 @@ export const SOCIAL_LINKS = [
     color: "#FF0000",
   },
   {
-    id: "upwork",
-    name: "Upwork",
-    handle: "Sanjar A.",
-    url: "https://www.upwork.com/freelancers/~01286cb98ee2e3f62b",
-    icon: "BriefcaseBusiness",
-    color: "hsl(var(--upwork))",
-  },
-  {
     id: "WhatsApp",
     name: "WhatsApp",
     handle: "Sanjar",
