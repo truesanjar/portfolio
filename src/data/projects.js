@@ -65,7 +65,7 @@ export const PROJECTS = [
     url: "#",
     accent: "#A855F7",
     cover:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&q=80&auto=format&fit=crop",
+      "truesanjar.png",
     title: {
       tj: "Ин вебсайт",
       ru: "Этот сайт",
@@ -94,7 +94,7 @@ export const PROJECTS = [
     url: "https://www.messenger0.world",
     accent: "#8400ff",
     cover:
-      "messenger0.png",
+      "https://www.messenger0.world/logo.png",
     title: {
       tj: "Messenger0",
       ru: "Messenger0",
