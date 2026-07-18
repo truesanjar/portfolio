@@ -2,7 +2,7 @@
   {
     "id": "tw-001",
     "text": {
-      "tj": "Салом дунё👋",
+      "tj": "Дуруд дунё👋",
       "ru": "Привет, мир👋",
       "en": "Hello, world👋"
     },
@@ -12,11 +12,21 @@
   {
     "id": "tw-002",
     "text": {
-      "tj": "Барои фармоиши вебсайт ё телеграм бот бо ман дар Telegram(Account) тамос гиред 📩",
-      "ru": "Для заказа веб-сайта или Telegram-бота свяжитесь со мной в Telegram(Account) 📩",
-      "en": "To order a website or Telegram bot, contact me on Telegram(Account) 📩"
+      "tj": "Ман мехоҳам ки ба Амрико, Туркия, Тоҷикистон дархости таҳсил дар донишгоҳро диҳам ва дар ҳар кадом ки қабул шудам ҳамон ҷо рафта таҳсил кунам. Ба ҳар ҳол авлавияти ман Амрикост. Шояд ман таҳсилро дар Тоҷикистон оғоз кунам аммо ҳатман дар давоми таҳсилам ба Туркия ва Амрико дархости тасҳил медиҳам ҳатто агар ки нагузарам ҳам тарзи дархост доданро ёд мегирам. Хулоса муҳимтарин ҳадафи ҳозираам таҳсил аст. Хеле хуб мешуд ки дар Амрико таҳсил кунам аммо чун англисиям онқадар хуб нест ва пули тест супоридан надорам ин дархост доданамро ба таъхир меандозад.",
+      "ru": "Я хочу подать документы в университеты США, Турции и Таджикистана и учиться там, куда меня примут. Однако моим главным приоритетом являются Соединённые Штаты. Возможно, я начну обучение в Таджикистане, но даже во время учёбы обязательно буду подавать заявки в университеты Турции и США. Даже если меня не примут, я хотя бы научусь правильно проходить процесс поступления. Одним словом, моя самая важная цель сейчас - получить высшее образование. Было бы замечательно учиться в США, но поскольку мой английский пока недостаточно хорош, а у меня нет денег на оплату языкового экзамена, это откладывает подачу моих заявок.",
+      "en": "I want to apply to universities in the United States, Turkey, and Tajikistan, and study wherever I am admitted. However, my top priority is the United States. I may begin my studies in Tajikistan, but I will definitely continue applying to universities in Turkey and the United States while I am studying. Even if I am not accepted, I will at least learn how the application process works. In short, my most important goal right now is to pursue higher education. It would be great to study in the United States, but since my English is not yet strong enough and I cannot afford the cost of an English proficiency test, I have to postpone submitting my applications."
     },
-    "image": "",
-    "created_at": "2026-05-13 15:29:00Z"
+    "image": "Study in USA.png",
+    "created_at": "2026-07-18 10:34:00Z"
+  },
+  {
+    "id": "tw-003",
+    "text": {
+      "tj": "Аз имрӯз саркарда ҳар рӯз сахт машғули ёдгирии англиси мешавад ки сатҳи забонамро боло барам. Баъди он ки дониши англисиям зиёд шуд баъдан тести DET ҳам месупорам. То он замон тамоми тамаркузамро дар ёдгирии англиси мегузорам.",
+      "ru": "Начиная с сегодняшнего дня я буду каждый день усердно заниматься изучением английского языка, чтобы повысить свой уровень. После того как мои знания английского улучшатся, я сдам тест DET. До этого момента я полностью сосредоточусь на изучении английского языка.",
+      "en": "Starting today, I will study English intensively every day to improve my language level. After my English skills become stronger, I will take the DET test. Until then, I will focus all my efforts on learning English."
+    },
+    "image": "learn english.jpg",
+    "created_at": "2026-07-18 10:37:00Z"
   }
 ]
