@@ -185,7 +185,7 @@ const TweetsPage = () => {
 
   useEffect(() => {
     loadPage();
-  }, []);
+  }, [loadPage]);
 
   useEffect(() => {
     if (done) return;
