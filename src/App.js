@@ -8,6 +8,7 @@ import ProjectsPage from "@/pages/Projects";
 import SkillsPage from "@/pages/Skills";
 import TweetsPage from "@/pages/Tweets";
 import SettingsPage from "@/pages/Settings";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </Routes>
           </main>
         </BrowserRouter>
+        <Analytics />
       </div>
     </AppProvider>
   );
