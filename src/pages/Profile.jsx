@@ -26,13 +26,15 @@ import {
   MessageCircle
 } from "lucide-react";
 import { useApp } from "../contexts/AppContext";
-import { PHOTO_URL, EMAIL, SOCIAL_LINKS } from "../data/profile";
+import { PHOTO_URL, EMAIL, SOCIAL_LINKS, getContactLinks } from "../data/profile";
 
 const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Rocket, BriefcaseBusiness, MessageSquareCode, Orbit, MessageSquare, MessageCircle };
 
 const ProfilePage = () => {
   const { t } = useApp();
   const p = t.profile;
+
+  const contactLinks = getContactLinks();
 
   const rows = [
     { icon: User, key: "fullName" },
@@ -122,7 +124,7 @@ const ProfilePage = () => {
           {p.contactTitle}
         </h2>
         <div className="grid sm:grid-cols-2 gap-3" data-testid="profile-socials">
-          {SOCIAL_LINKS.map((s) => {
+          {contactLinks.map((s) => {
             const isAnyVoice = s.id === "anyvoice";
             const isMessenger0 = s.id === "messenger0";
             const Icon = ICONS[s.icon] || Globe;

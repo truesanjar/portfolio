@@ -1,7 +1,7 @@
 import React from "react";
 import { useApp } from "../contexts/AppContext";
 import { LANGUAGES } from "../i18n";
-import { SOCIAL_LINKS } from "../data/profile";
+import { SOCIAL_LINKS, getSubscribeLinks } from "../data/profile";
 import {
   Sun,
   Moon,
@@ -30,6 +30,8 @@ const ICONS = { Github, Linkedin, Facebook, Send, AtSign, Instagram, Youtube, Ro
 const SettingsPage = () => {
   const { t, lang, setLang, theme, setTheme } = useApp();
   const s = t.settings;
+
+  const subscribeLinks = getSubscribeLinks();
 
   return (
     <div className="page-shell fade-up" data-testid="settings-page">
@@ -119,7 +121,7 @@ const SettingsPage = () => {
         </h2>
         <p className="text-muted-foreground mb-5">{s.supportText}</p>
         <div className="space-y-2.5">
-          {SOCIAL_LINKS.map((social) => {
+          {subscribeLinks.map((social) => {
             const isAnyVoice = social.id === "anyvoice";
             const isMessenger0 = social.id === "messenger0";
             const Icon = ICONS[social.icon] || Globe;
