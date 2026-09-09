@@ -183,6 +183,7 @@ const TweetsPage = () => {
     }, 200);
   }, [skip, loading, done, sortedTweets]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadPage();
   }, []);
