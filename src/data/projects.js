@@ -3,7 +3,7 @@ export const PROJECTS = [
   {
     id: "anyvoice",
     year: "2026",
-    stack: ["Python", "JavaScript", "React", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket", "Docker"],
+    stack: ["Python", "JavaScript", "React", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket", "Docker", "REST API", "Git"],
     url: "https://www.anyvoice.world",
     accent: "#F59E0B",
     cover:
@@ -61,7 +61,7 @@ export const PROJECTS = [
   {
     id: "portfolio",
     year: "2026",
-    stack: ["JavaScript", "React", "HTML", "CSS", "Tailwind", "i18n"],
+    stack: ["JavaScript", "React", "HTML", "CSS", "Tailwind", "i18n", "Git"],
     url: "#",
     accent: "#A855F7",
     cover:
@@ -90,11 +90,11 @@ export const PROJECTS = [
   {
     id: "messenger0",
     year: "2026",
-    stack: ["Python", "JavaScript", "React", "FastAPI", "MongoDB", "Websocket", "HTML", "CSS", "Tailwind", "i18n", "Docker"],
+    stack: ["Python", "JavaScript", "React", "FastAPI", "MongoDB", "Websocket", "HTML", "CSS", "Tailwind", "i18n", "Docker", "REST API", "Git"],
     url: "https://www.messenger0.world",
     accent: "#8400ff",
     cover:
-      "https://www.messenger0.world/logo.png",
+      "messenger0.png",
     title: {
       tj: "Messenger0",
       ru: "Messenger0",
