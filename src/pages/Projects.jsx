@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { ExternalLink, X, Calendar, Layers, ArrowUpRight } from "lucide-react";
+import {
+  ExternalLink,
+  X,
+  Calendar,
+  Layers,
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { useApp } from "../contexts/AppContext";
 import { PROJECTS } from "../data/projects";
 
@@ -15,14 +23,106 @@ const ProjectsPage = () => {
     return () => setMounted(false);
   }, []);
 
-  // Modal Component бо Portal ва Layout Responsive
+  const handleOpenProject = (proj) => {
+    setActive(proj);
+  };
+
+  // Modal Component
   const ProjectModal = ({ project, onClose }) => {
+    const images =
+      project.images && project.images.length > 0
+        ? project.images
+        : [project.cover];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     useEffect(() => {
       document.body.style.overflow = "hidden";
       return () => {
         document.body.style.overflow = "";
       };
     }, []);
+
+    useEffect(() => {
+      setCurrentIndex(0);
+    }, [project.id]);
+
+    const goNext = () => {
+      setCurrentIndex((i) => (i + 1) % images.length);
+    };
+
+    const goPrev = () => {
+      setCurrentIndex((i) => (i - 1 + images.length) % images.length);
+    };
+
+    useEffect(() => {
+      const handleKey = (e) => {
+        if (e.key === "ArrowRight") goNext();
+        if (e.key === "ArrowLeft") goPrev();
+        if (e.key === "Escape") onClose();
+      };
+      window.addEventListener("keydown", handleKey);
+      return () => window.removeEventListener("keydown", handleKey);
+    }, [images.length]);
+
+    // Функсияи оддӣ (на компонент), то ҳар рендер акс аз нав сохта нашавад
+    const renderSlider = () => (
+      <div className="relative w-full h-full flex items-center justify-center bg-black">
+        <img
+          src={images[currentIndex]}
+          alt={`${project.title[lang]} - ${currentIndex + 1}`}
+          className="w-full h-full object-contain transition-opacity duration-300"
+        />
+
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goPrev();
+              }}
+              aria-label="Previous image"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 backdrop-blur border border-white/20 hover:bg-black/80 text-white transition-all"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goNext();
+              }}
+              aria-label="Next image"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 backdrop-blur border border-white/20 hover:bg-black/80 text-white transition-all"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur border border-white/20">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentIndex(i);
+                  }}
+                  aria-label={`Go to image ${i + 1}`}
+                  className={`rounded-full transition-all ${
+                    i === currentIndex
+                      ? "w-5 h-1.5 bg-white"
+                      : "w-1.5 h-1.5 bg-white/50 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur border border-white/20 text-white text-xs mono">
+              {currentIndex + 1} / {images.length}
+            </div>
+          </>
+        )}
+      </div>
+    );
 
     return createPortal(
       <div
@@ -73,34 +173,20 @@ const ProjectsPage = () => {
             <X className="w-5 h-5" />
           </button>
 
-          {/* Контейнери ягонаи скролшаванда */}
-          <div className="flex-1 overflow-y-auto">
-            {/* Тасвир дар боло барои mobile */}
-            <div className="w-full bg-black flex items-center justify-center p-4 md:hidden">
-              <div className="aspect-square w-full max-w-[500px] max-h-[500px]">
-                <img
-                  src={project.cover}
-                  alt={project.title[lang]}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
+          <div className="flex-1 min-h-0 overflow-y-auto md:overflow-hidden">
+            {/* Mobile: акс баландии калон мегирад */}
+            <div className="w-full bg-black md:hidden" style={{ height: "70vh" }}>
+              {renderSlider()}
             </div>
 
-            {/* Layout барои desktop: flex-row */}
-            <div className="flex flex-col md:flex-row items-stretch">
-              {/* Самти чап (расм) барои desktop */}
-              <div className="hidden md:flex w-full md:w-1/2 bg-black items-center justify-center flex-shrink-0 p-4">
-                <div className="aspect-square w-full min-w-[280px] min-h-[280px] max-w-[700px] max-h-[700px]">
-                  <img
-                    src={project.cover}
-                    alt={project.title[lang]}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
+            <div className="flex flex-col md:flex-row md:h-full">
+              {/* Desktop: акс аз боло то поён */}
+              <div className="hidden md:block md:w-1/2 h-full bg-black flex-shrink-0">
+                {renderSlider()}
               </div>
 
-              {/* Самти рост (матн) */}
-              <div className="w-full md:w-1/2 p-6 md:p-8">
+              {/* Матн: худаш scroll мешавад */}
+              <div className="w-full md:w-1/2 p-6 md:p-8 md:h-full md:overflow-y-auto">
                 <div className="flex items-center gap-3 mb-3">
                   <span
                     className="text-xs mono font-semibold px-2.5 py-1 rounded-full"
@@ -188,7 +274,7 @@ const ProjectsPage = () => {
         {PROJECTS.map((proj) => (
           <button
             key={proj.id}
-            onClick={() => setActive(proj)}
+            onClick={() => handleOpenProject(proj)}
             data-testid={`project-card-${proj.id}`}
             className="card-soft project-card text-left flex flex-col"
           >
@@ -237,7 +323,6 @@ const ProjectsPage = () => {
         ))}
       </div>
 
-      {/* Modal бо Portal */}
       {mounted && active && (
         <ProjectModal project={active} onClose={() => setActive(null)} />
       )}

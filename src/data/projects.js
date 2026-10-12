@@ -6,8 +6,19 @@ export const PROJECTS = [
     stack: ["Python", "JavaScript", "React", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket", "Docker", "REST API", "Git"],
     url: "https://www.anyvoice.world",
     accent: "#F59E0B",
-    cover:
-      "anyvoice.png",
+    cover: "anyvoice.png",
+    images: [
+      "anyvoice/1.jpg",
+      "anyvoice/2.jpg",
+      "anyvoice/3.jpg",
+      "anyvoice/4.jpg",
+      "anyvoice/5.jpg",
+      "anyvoice/6.jpg",
+      "anyvoice/7.jpg",
+      "anyvoice/8.jpg",
+      "anyvoice/9.jpg",
+      "anyvoice/10.jpg",
+    ],
     title: {
       tj: "AnyVoice",
       ru: "AnyVoice",
@@ -35,8 +46,8 @@ export const PROJECTS = [
     stack: ["Python", "aiogram"],
     url: "https://t.me/Capsulixbot",
     accent: "#22D3EE",
-    cover:
-      "capsulix.jpg",
+    cover: "capsulix.jpg",
+    // images: ["capsulix/1.jpg", "capsulix/2.jpg"], // баъдтар илова кунед
     title: {
       tj: "Capsulix Bot",
       ru: "Capsulix Bot",
@@ -64,8 +75,14 @@ export const PROJECTS = [
     stack: ["JavaScript", "React", "HTML", "CSS", "Tailwind", "i18n", "Git"],
     url: "#",
     accent: "#A855F7",
-    cover:
-      "truesanjar.png",
+    cover: "truesanjar.png",
+    images: [
+      "portfolio/1.png",
+      "portfolio/2.png",
+      "portfolio/3.png",
+      "portfolio/4.png",
+      "portfolio/5.png",
+    ],
     title: {
       tj: "Ин вебсайт",
       ru: "Этот сайт",
@@ -93,8 +110,12 @@ export const PROJECTS = [
     stack: ["Python", "JavaScript", "React", "FastAPI", "MongoDB", "Websocket", "HTML", "CSS", "Tailwind", "i18n", "Docker", "REST API", "Git"],
     url: "https://www.messenger0.world",
     accent: "#8400ff",
-    cover:
-      "messenger0.png",
+    cover: "messenger0.png",
+    images: [
+      "messenger0/1.png",
+      "messenger0/2.png",
+      "messenger0/3.png",
+    ],
     title: {
       tj: "Messenger0",
       ru: "Messenger0",

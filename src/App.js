@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import React from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -8,6 +9,9 @@ import ProjectsPage from "@/pages/Projects";
 import SkillsPage from "@/pages/Skills";
 import TweetsPage from "@/pages/Tweets";
 import SettingsPage from "@/pages/Settings";
+
+// Бояд ки барои ҳар проект дар сайт аксҳо мавҷуд бошад ки ҳар касе ки мехоҳад тавонад маълумот гирад дар бораи дохили проект
+// фақат аксҳои Capsulix монд
 
 function App() {
   return (
