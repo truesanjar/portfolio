@@ -3,11 +3,22 @@ export const PROJECTS = [
   {
     id: "anyvoice",
     year: "2026",
-    stack: ["Python", "JavaScript", "React", "Vite", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket"],
+    stack: ["Python", "JavaScript", "React", "HTML", "CSS", "i18n", "FastAPI", "MongoDB", "WebSocket", "Docker", "REST API", "Git"],
     url: "https://www.anyvoice.world",
     accent: "#F59E0B",
-    cover:
-      "anyvoice.png",
+    cover: "anyvoice.png",
+    images: [
+      "anyvoice/1.jpg",
+      "anyvoice/2.jpg",
+      "anyvoice/3.jpg",
+      "anyvoice/4.jpg",
+      "anyvoice/5.jpg",
+      "anyvoice/6.jpg",
+      "anyvoice/7.jpg",
+      "anyvoice/8.jpg",
+      "anyvoice/9.jpg",
+      "anyvoice/10.jpg",
+    ],
     title: {
       tj: "AnyVoice",
       ru: "AnyVoice",
@@ -35,8 +46,8 @@ export const PROJECTS = [
     stack: ["Python", "aiogram"],
     url: "https://t.me/Capsulixbot",
     accent: "#22D3EE",
-    cover:
-      "capsulix.jpg",
+    cover: "capsulix.jpg",
+    // images: ["capsulix/1.jpg", "capsulix/2.jpg"], // баъдтар илова кунед
     title: {
       tj: "Capsulix Bot",
       ru: "Capsulix Bot",
@@ -61,11 +72,17 @@ export const PROJECTS = [
   {
     id: "portfolio",
     year: "2026",
-    stack: ["JavaScript", "React", "HTML", "CSS", "Tailwind", "i18n"],
+    stack: ["JavaScript", "React", "HTML", "CSS", "Tailwind", "i18n", "Git"],
     url: "#",
     accent: "#A855F7",
-    cover:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&q=80&auto=format&fit=crop",
+    cover: "truesanjar.png",
+    images: [
+      "portfolio/1.png",
+      "portfolio/2.png",
+      "portfolio/3.png",
+      "portfolio/4.png",
+      "portfolio/5.png",
+    ],
     title: {
       tj: "Ин вебсайт",
       ru: "Этот сайт",
@@ -85,6 +102,39 @@ export const PROJECTS = [
       tj: "Портфолио бо твитҳо, лоиҳаҳо, малакаҳо шуморо комилан бо ман шинос мекунад. 3 забон ва 2 темаро дастгири мекунад. Ҳамчунин барои mobile ҳам муносиб аст.",
       ru: "Портфолио с твитами, проектами и навыками, которое полностью знакомит вас со мной. Поддерживает 3 языка и 2 темы. Также адаптировано для мобильных устройств.",
       en: "A portfolio with tweets, projects, and skills that fully introduces you to me. It supports 3 languages and 2 themes. It is also fully responsive for mobile devices.",
+    },
+  },
+  {
+    id: "messenger0",
+    year: "2026",
+    stack: ["Python", "JavaScript", "React", "FastAPI", "MongoDB", "Websocket", "HTML", "CSS", "Tailwind", "i18n", "Docker", "REST API", "Git"],
+    url: "https://www.messenger0.world",
+    accent: "#8400ff",
+    cover: "messenger0.png",
+    images: [
+      "messenger0/1.png",
+      "messenger0/2.png",
+      "messenger0/3.png",
+    ],
+    title: {
+      tj: "Messenger0",
+      ru: "Messenger0",
+      en: "Messenger0",
+    },
+    tagline: {
+      tj: "Паёмрасони амн барои сӯҳбати роҳат",
+      ru: "Безопасный мессенджер для удобного общения",
+      en: "Safe messenger for comfortable communication",
+    },
+    why: {
+      tj: "Ҳама бояд тавонанд дар амнияти комил бо ҳамдигар алоқа дошта бошанд.",
+      ru: "Каждый должен иметь возможность общаться друг с другом в полной безопасности.",
+      en: "Everyone should have the ability to communicate with each other in full safety.",
+    },
+    what: {
+      tj: "Паёмрасон бо системаи рамзгузории E2EE. Сабти ном хеле сода аст фақат бо аккаунти google. Баъди сабти ном шумо ҳар каси дигаре ки дар ин паёмрасон ҳастро ҷустуҷӯ карда бо вай як сӯҳабти комилан амн дошта метавонед.",
+      ru: "Мессенджер с системой сквозного шифрования E2EE. Регистрация очень простая, только с аккаунтом Google. После регистрации вы можете найти любого другого человека, который есть в этом мессенджере, и вести с ним полностью безопасное общение.",
+      en: "Messenger with an E2EE encryption system. Registration is very simple, only with a Google account. After registration, you can search for any other person who is on this messenger and have a completely secure conversation with them.",
     },
   },
 ];

@@ -27,6 +27,7 @@
         --radius: 0.875rem;
         --github: 10 10% 10%;
         --twitter: 10 10% 10%;
+        --upwork: 10 10% 10%;
     }
 
     .dark {
@@ -52,6 +53,7 @@
         --ring: 33 100% 60%;
         --github: 0 0% 100%;
         --twitter: 0 0% 100%;
+        --upwork: 0 0% 100%;
     }
 }
 

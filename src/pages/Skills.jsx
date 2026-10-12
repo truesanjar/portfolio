@@ -2,7 +2,38 @@ import React, { useEffect, useRef, useState } from "react";
 import { useApp } from "../contexts/AppContext";
 import { SKILL_GROUPS } from "../data/skills";
 
-const SkillBar = ({ name, level }) => {
+// Функсия барои муайян кардани матни сифат аз рӯи фоиз
+const getSkillLabel = (level, lang) => {
+  const labels = {
+    tj: {
+      excellent: "Хеле хуб",
+      good: "Хуб",
+      average: "Миёна",
+      low: "Кам",
+    },
+    ru: {
+      excellent: "Отлично",
+      good: "Хорошо",
+      average: "Средне",
+      low: "Слабо",
+    },
+    en: {
+      excellent: "Excellent",
+      good: "Good",
+      average: "Average",
+      low: "Low",
+    },
+  };
+
+  const l = labels[lang] || labels.en;
+
+  if (level >= 80) return l.excellent;
+  if (level >= 60) return l.good;
+  if (level >= 40) return l.average;
+  return l.low;
+};
+
+const SkillBar = ({ name, level, lang }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -21,7 +52,9 @@ const SkillBar = ({ name, level }) => {
     <div ref={ref} className="space-y-2">
       <div className="flex items-center justify-between text-sm">
         <span className="font-medium">{name}</span>
-        <span className="mono text-xs text-muted-foreground">{level}%</span>
+        <span className="mono text-xs text-muted-foreground">
+          {getSkillLabel(level, lang)}
+        </span>
       </div>
       <div className="skill-track">
         <div
@@ -61,7 +94,12 @@ const SkillsPage = () => {
             </h2>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
               {group.items.map((item) => (
-                <SkillBar key={item.name} name={item.name} level={item.level} />
+                <SkillBar
+                  key={item.name}
+                  name={item.name}
+                  level={item.level}
+                  lang={lang}
+                />
               ))}
             </div>
           </section>
